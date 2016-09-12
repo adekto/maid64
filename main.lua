@@ -24,6 +24,9 @@ function love.draw()
     --draw images here
     love.graphics.draw(maid,32,32,rotate,1,1,32,32)
     
+    --can also draw shapes and get mouse position
+    love.graphics.circle("fill", maid64.mouse.getX(),  maid64.mouse.getY(), 2)
+    
     maid64.finish()--finishes the maid64 process
 end
 
