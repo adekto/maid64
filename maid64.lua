@@ -53,13 +53,13 @@ function maid64.mouse.getY()
 end
 
 function maid64.newImage(source)
-  image = love.graphics.newImage(source)
+  local image = love.graphics.newImage(source)
   image:setFilter("nearest","nearest")
   return image
 end
 
 function maid64.newTileSet(image, x, y)
-  quad = {x = x, y = y}
+  local quad = {x = x, y = y}
   for i=0,(image:getWidth()/x)*(image:getHeight()/y)-1 do
     quad[i] = love.graphics.newQuad((i%(image:getWidth()/x))*x, math.floor(i/(image:getWidth()/x))*y, x, y, image:getDimensions())
   end
