@@ -3,7 +3,7 @@
 --        MIT license        --
 -- Copyright (c) 2016 adekto --
 
-maid64 = {mouse = {}}
+local maid64 = {mouse = {}}
 
 function maid64.setup(x,y)
     maid64.sizeX = x or 64
@@ -77,3 +77,5 @@ function maid64.newTileSet(image, x, y)
     end
     return quad
 end
+
+return maid64
