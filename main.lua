@@ -1,4 +1,4 @@
-require "maid64"
+local maid64 = require "maid64"
 
 function love.load()
     --optional settings for window
