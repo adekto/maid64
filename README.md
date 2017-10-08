@@ -1,7 +1,7 @@
 # maid64
 easy low resolution scaler for love2D
 
-current version 1.5
+current version 1.6
 
 ---
 
@@ -19,3 +19,5 @@ current version 1.5
 ##variables
 * **maid64.left** the left most pixel location
 * **maid64.right** the right most pixel location
+
+---
