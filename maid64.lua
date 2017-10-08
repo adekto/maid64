@@ -1,11 +1,12 @@
---   maid64 made by adekto   --
---        version 1.5        --
---        MIT license        --
--- Copyright (c) 2016 adekto --
+--     maid64 made by adekto     --
+--          version 1.6          --
+--          MIT license          --
+-- Copyright (c)2016-2017 adekto --
 
 local maid64 = {mouse = {}}
 
-function maid64.setup(x,y)
+function maid64.setup(x,y,overscan)
+    maid64.overscan = overscan or false
     maid64.sizeX = x or 64
     maid64.sizeY = y or maid64.sizeX
     if x < (y or 0) then
@@ -34,12 +35,32 @@ function maid64.finish()
 end
 
 function maid64.resize(w, h)
-    if h/maid64.sizeY < w/maid64.sizeX then
+    if maid64.overscan then
         maid64.scaler = h / maid64.sizeY
+        -- minimum size will be halve the buffer width
+        if w/maid64.scaler < maid64.sizeX/2 then
+            maid64.scaler = w / maid64.sizeX*2
+        end
+        -- overscan scaler
+        maid64.x = (w - (maid64.scaler * maid64.sizeX))/2
+
+        if w/maid64.scaler > maid64.sizeX then
+            maid64.right = maid64.sizeX
+            maid64.left = 0
+        else
+            maid64.right = ((w - (maid64.x))/maid64.scaler)
+            maid64.left = -(maid64.x/maid64.scaler)
+        end
     else
-        maid64.scaler = w / maid64.sizeX
+        if h/maid64.sizeY < w/maid64.sizeX then
+            maid64.scaler = h / maid64.sizeY
+        else
+            maid64.scaler = w / maid64.sizeX
+        end
+        maid64.right = maid64.sizeX
+        maid64.left = 0
+        maid64.x = w/2 - (maid64.scaler * (maid64.sizeX/2))
     end
-    maid64.x = w/2 - (maid64.scaler * (maid64.sizeX/2))
     maid64.y = h/2 - (maid64.scaler * (maid64.sizeY/2))
 end
 
