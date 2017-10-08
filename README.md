@@ -16,5 +16,6 @@ current version 1.5
 * **maid64.mouse.getX()** gets the mouse x position inside maid64
 * **maid64.mouse.getY()** gets the mouse y position inside maid64
 
-
-  
+##variables
+* **maid64.left** the left most pixel location
+* **maid64.right** the right most pixel location
