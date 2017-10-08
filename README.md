@@ -5,7 +5,7 @@ current version 1.6
 
 ---
 
-##functions
+## functions
 * **maid64.setup(x,y)** initilize maid64 has optional parameters for the pixel width and height
 * **maid64.start()** use in draw to start scaled rendering
 * **maid64.finish()** use in draw to end scaled rendering
@@ -17,6 +17,7 @@ current version 1.6
 * **maid64.mouse.getY()** gets the mouse y position inside maid64
 
 ---
+## variables
 * **maid64.left** the left most pixel location
 * **maid64.right** the right most pixel location
 
