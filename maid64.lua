@@ -31,6 +31,7 @@ end
 function maid64.finish()
     love.graphics.setCanvas()
     --love.graphics.setShader() --used only for special shaders
+    love.graphics.setColor(1,1,1,1)
     love.graphics.draw(maid64.canvas, maid64.x, maid64.y, 0, maid64.scaler)
 end
 
